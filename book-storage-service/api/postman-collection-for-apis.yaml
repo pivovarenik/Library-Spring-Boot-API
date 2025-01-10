@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "64a995ec-8bab-4a9a-9e44-3ad8e73a57d7",
+		"name": "Full Library API HTTP Request Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35070076"
+	},
+	"item": [
+		{
+			"name": "Book-tracker-service",
+			"item": [
+				{
+					"name": "CreateNewBook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "4",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/trackerApi/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"trackerApi",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFreeBooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/trackerApi",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"trackerApi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChangeBookStatus",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"AVAILABLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/trackerApi/change/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"trackerApi",
+								"change",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteBook",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/trackerApi/del/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"trackerApi",
+								"del",
+								"2"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Folder of Http requests for book-tracker-service"
+		},
+		{
+			"name": "Book-storage-service",
+			"item": [
+				{
+					"name": "Add a book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "\"Insert Your Token Here\"",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"isbn\": \"323-0-1234-5678-9\",\r\n  \"title\": \"1232k\",\r\n  \"genre\": \"232\",\r\n  \"description\": \"A test book\",\r\n  \"author\": \"Author Name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/library",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"library"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllBooks",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateBook",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"isbn\": \"977-0-1234-5678-9\",\r\n  \"title\": \"New Book231231232\",\r\n  \"genre\": \"Fiction\",\r\n  \"description\": \"A test book\",\r\n  \"author\": \"Author Name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/library/book/10",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"library",
+								"book",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteBook",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/library/book/0",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"library",
+								"book",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindBookByID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "FindBookByISBN",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/library/book?isbn=977-0-1234-5678-9",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"library",
+								"book"
+							],
+							"query": [
+								{
+									"key": "isbn",
+									"value": "977-0-1234-5678-9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterAUser",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"NewUser\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GenerateAToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"NewUser\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/generate-token",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"generate-token"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Folder of Http requests for book-storage-service"
+		}
+	]
+}
