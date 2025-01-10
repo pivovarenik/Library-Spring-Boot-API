@@ -51,3 +51,12 @@
 который находится в папке 
 ## 
     book-storage-service/api
+## Тестирование
+Есть один запрос на который стоит проверка bearer-token 
+##  
+    post(http://localhost:8080/api/library)
+В нем обязательно нужно добавить authorization token который можно получить с помощью 
+##  
+    post(localhost:8080/register)
+    post(localhost:8080/generate-token)
+В первом запросе передается username и password нового пользователя а во втором после регистрации получается token который можно использовать при первом запросе
