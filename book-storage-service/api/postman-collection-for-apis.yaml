@@ -125,7 +125,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "\"Insert Your Token Here\"",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoZWxsbzE0Iiwicm9sZSI6IkxpYnJhcmlhbiIsImlhdCI6MTc0MTI3NjMzOCwiZXhwIjoxNzQxMzM2MzM4fQ.DdMGDuEBJTMZ31jxI_dE6ON6IIvrBfJgKUCE-Boxcs4",
 									"type": "string"
 								}
 							]
@@ -142,7 +142,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/library",
+							"raw": "http://localhost:8080/api/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -150,7 +150,7 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"library"
+								"create"
 							]
 						}
 					},
@@ -159,14 +159,44 @@
 				{
 					"name": "GetAllBooks",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoZWxsbzE0Iiwicm9sZSI6IkxpYnJhcmlhbiIsImlhdCI6MTczOTM4NDY3NywiZXhwIjoxNzM5NDQ0Njc3fQ.MYYCjn6zUawe0iN7jrtUcJc9aEVM2vCvAAzHGaqlB4w",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/library",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"library"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "UpdateBook",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoZWxsbzE0Iiwicm9sZSI6IkxpYnJhcmlhbiIsImlhdCI6MTczOTM4MzY1OCwiZXhwIjoxNzM5NDQzNjU4fQ.D4DbIG4K7pg0RAoK45PMO3Wf385ORWz2ebNhzWEPJrE",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -179,16 +209,15 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/api/library/book/10",
+							"raw": "localhost:8080/api/book/1",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"api",
-								"library",
 								"book",
-								"10"
+								"1"
 							]
 						}
 					},
@@ -197,19 +226,28 @@
 				{
 					"name": "DeleteBook",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoZWxsbzE0Iiwicm9sZSI6IkxpYnJhcmlhbiIsImlhdCI6MTczOTM4MzUzNCwiZXhwIjoxNzM5NDQzNTM0fQ.LH7JmnSnIdEpy9cZUnPhNs1bbydMGmaUewvJDBHjaIM",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/api/library/book/0",
+							"raw": "localhost:8080/api/book/2",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"api",
-								"library",
 								"book",
-								"0"
+								"2"
 							]
 						}
 					},
@@ -218,24 +256,55 @@
 				{
 					"name": "FindBookByID",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoZWxsbzEzIiwicm9sZSI6IlJlYWRlciIsImlhdCI6MTczOTM4NDc2MSwiZXhwIjoxNzM5NDQ0NzYxfQ.VFtca5qeWs0IWpj-Juz8vg2EyVz1MZcPpFMX-BiN4OM",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/library/book/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"library",
+								"book",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "FindBookByISBN",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoZWxsbzEzIiwicm9sZSI6IlJlYWRlciIsImlhdCI6MTczOTM4MzE3NSwiZXhwIjoxNzM5NDQzMTc1fQ.hkFNazAHGiAqJI2JD7tQ5eQxf4J4WXnZ8ZFIRq1f3ro",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/api/library/book?isbn=977-0-1234-5678-9",
+							"raw": "localhost:8080/library/book?isbn=977-0-1234-5678-9",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"api",
 								"library",
 								"book"
 							],
@@ -250,16 +319,16 @@
 					"response": []
 				},
 				{
-					"name": "RegisterAUser",
+					"name": "SignUpRequest",
 					"request": {
 						"auth": {
-							"type": "bearer"
+							"type": "noauth"
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"NewUser\",\r\n    \"password\":\"1234\"\r\n}",
+							"raw": "{\r\n    \"username\":\"hello13\",\r\n    \"password\":\"12345\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -267,26 +336,30 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/register",
+							"raw": "localhost:8080/auth/signin",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"register"
+								"auth",
+								"signin"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "GenerateAToken",
+					"name": "SignInRequest",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\" : \"NewUser\",\r\n    \"password\": \"1234\"\r\n}",
+							"raw": "{\r\n    \"username\":\"hello13\",\r\n    \"password\":\"12345\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -294,13 +367,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/generate-token",
+							"raw": "localhost:8080/auth/signin",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"generate-token"
+								"auth",
+								"signin"
 							]
 						}
 					},

@@ -13,7 +13,7 @@ import java.util.Optional;
 @Repository
 public interface BookStatusRepository extends JpaRepository<BookStatus, Long> {
     List<BookStatus> findAllByStatus(String status);
-    @Modifying
+    @Modifying(clearAutomatically = true)
     @Transactional
     @Query("UPDATE BookStatus b SET b.status = 'DELETED' WHERE b.bookId = :id")
     void markBookAsDeleted(Long id);
